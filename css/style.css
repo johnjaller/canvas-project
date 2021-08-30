@@ -10,9 +10,9 @@
 #canvas-draft {
   background-color: transparent;
 }
-body {
+/* body {
   overflow: hidden;
-}
+} */
 #canvas-container {
   height: 720px;
 }

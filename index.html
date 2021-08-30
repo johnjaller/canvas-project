@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js">
   <head>
@@ -14,7 +13,6 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-   
   </head>
   <body class="container">
     <h1>Canvas Application</h1>
@@ -40,41 +38,47 @@
       <!-- The drawing line button  -->
       <span class="btn btn-info fa fa-paint-brush" id="drawing-line"
         >Draw Line</span
-      > 
-      <!-- jQuery -->
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      >
+      <span class="btn btn-info fa fa-paint-brush" id="drawing-circle"
+        >Drawing Circle</span
+      >
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   
+  </script>
     <!-- The drawing functionality  -->
     <script
       src="./javascript/canvas-common.js"
       type="text/javascript"
-      async
-      defer
+   
     ></script>
 
     <!-- The drawing line functionality  -->
     <script
       src="./javascript/drawing-line.js"
       type="text/javascript"
-      async
-      defer
+
     ></script>
     <!-- The drawing rectangle functionality  -->
     <script
       src="./javascript/drawing-rectangle.js"
       type="text/javascript"
-      async
-      defer
+
     ></script>
     <script type="text/javascript">
-    $(()=>{
-      currentFunction =  new DrawingLine(contextReal)
-      $("#drawing-rectangle").click(() => {
-        currentFunction = new DrawingRectangle(contextReal, contextDraft);
-      });
-      $("#drawing-line").click(() => {
+      $(() => {
         currentFunction = new DrawingLine(contextReal);
-      });  
-    })
+        $("#drawing-rectangle").click(() => {
+          currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        });
+        $("#drawing-line").click(() => {
+          currentFunction = new DrawingLine(contextReal);
+        });
+        $("#drawing-circle").click(() => {
+          currentFunction = new DrawingLine(contextReal);
+        });
+      });
     </script>
   </body>
 </html>
