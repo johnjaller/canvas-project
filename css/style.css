@@ -10,9 +10,63 @@
 #canvas-draft {
   background-color: transparent;
 }
-body {
-  overflow: hidden;
-}
+/* body {
+  overflow: visible;
+} */
 #canvas-container {
   height: 720px;
+}
+
+
+/* //tool styling//
+.menuOpen {
+	position: absolute;
+	margin: 5px 0 0 5px;
+	padding: 5px;
+	border-radius: 20%;
+	background: rgb(204,204,204);
+	height: 50px;
+	width: 50px;
+	display: none;
+	z-index: 15;
+}
+/*Inactive toolbar on desktop mode section*/
+/* .inactive {
+	background: rgb(200,200,200);
+	margin: 5px 0 0 5px;
+	padding: 5px;
+	border-radius: 20%;
+	height: 33px;
+	width: 33px;
+	display: none;
+} */ */
+/*Tools*/
+
+/* 
+.btn-light {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 20px;
+  line-height: 1.1;
+  text-align: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: white;
+} */ 
+
+
+.buttons {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+img {
+width: 40px;
+  height: 40px;
 }
