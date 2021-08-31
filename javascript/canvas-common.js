@@ -49,7 +49,8 @@ $("#canvas-draft").mouseenter(function (e) {
 /** # Class (all classes will have these methods) #
 /*  ====================== */
 class PaintFunction {
-  constructor() {}
+  constructor() {
+  }
   onMouseDown() {}
   onDragging() {}
   onMouseMove() {}
