@@ -41,6 +41,8 @@
       <span class="btn btn-info fa fa-paint-brush" id="drawing-line"
         >Draw Line</span
       > 
+      <input type ='color' id='fill' value="#0000FF" >
+      <input type ='color' id='stroke' value='#000000'>
       <!-- jQuery -->
       <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -51,23 +53,21 @@
     <script
       src="./javascript/canvas-common.js"
       type="text/javascript"
-      async
-      defer
     ></script>
 
     <!-- The drawing line functionality  -->
     <script
       src="./javascript/drawing-line.js"
       type="text/javascript"
-      async
-      defer
     ></script>
     <!-- The drawing rectangle functionality  -->
     <script
       src="./javascript/drawing-rectangle.js"
       type="text/javascript"
-      async
-      defer
+    ></script>
+    <script
+      src="./javascript/coloring.js"
+      type="text/javascript"
     ></script>
     <script type="text/javascript">
     $(()=>{
