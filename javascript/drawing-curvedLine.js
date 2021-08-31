@@ -55,7 +55,6 @@ onDragging(coord,event) {
           );
           this.contextDraft.restore()
     this.contextDraft.stroke()
-    this.contextDraft.closePath();
 
     }
   }
@@ -80,6 +79,8 @@ onDragging(coord,event) {
         this.contextDraft.fill()
         this.contextDraft.restore()
         this.line=true
+    this.contextDraft.closePath();
+
     }else{
         console.log("hello")
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
