@@ -1,8 +1,8 @@
 let width= $("#width").val()
-$(".width-text").html(`The current width is ${width}`);
+$(".width-text").html(`Current width: ${width}`);
   $("#width").on("change", function () {
     width= $("#width").val()
-$(".width-text").html(`Current width is ${width}`);
+$(".width-text").html(`Current width: ${width}`);
     
   });
 

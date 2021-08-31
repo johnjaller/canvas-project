@@ -1,4 +1,4 @@
-let size=40
+
 class eraser extends PaintFunction{
     constructor(contextReal, contextDraft) {
         super();
@@ -6,18 +6,18 @@ class eraser extends PaintFunction{
         this.contextDraft = contextDraft;
       }
       onMouseDown(coord, event) {
-        this.contextReal.clearRect(coord[0]-size+7,coord[1]-size+7,size,size)
+        this.contextReal.clearRect(coord[0]-eraserSize+7,coord[1]-eraserSize+7,eraserSize,eraserSize)
  
       }
     
       onDragging(coord, event) {
-        this.contextReal.clearRect(coord[0]-size+7,coord[1]-size+7,size,size)
+        this.contextReal.clearRect(coord[0]-eraserSize+7,coord[1]-eraserSize+7,eraserSize,eraserSize)
       }
     
       onMouseMove(coord,e) {
           this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
           this.contextDraft.strokeStyle = 'black';
-        this.contextDraft.strokeRect(coord[0]-size+7,coord[1]-size+7,size,size)
+        this.contextDraft.strokeRect(coord[0]-eraserSize+7,coord[1]-eraserSize+7,eraserSize,eraserSize)
       }
     
       // Committing the element to the canvas
