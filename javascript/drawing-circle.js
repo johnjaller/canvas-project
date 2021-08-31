@@ -1,5 +1,3 @@
-let fillColor = "#f44";
-let StrokeColor = "#000000";
 class DrawingCircle extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
@@ -7,8 +5,8 @@ class DrawingCircle extends PaintFunction {
     this.contextDraft = contextDraft;
   }
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = fillColor;
-    this.contextReal.strokeStyle = StrokeColor;
+    fillStyleReal()
+    strokeStyleReal()
     this.origX = coord[0];
     this.origY = coord[1];
   }
@@ -16,8 +14,8 @@ class DrawingCircle extends PaintFunction {
       
       //clear all the context on the screen
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-      this.contextDraft.fillStyle = fillColor;
-      this.contextReal.strokeStyle = StrokeColor;
+      fillStyleDraft()
+      strokeStyleDraft()
     this.contextDraft.beginPath();
     this.circleX = (this.origX + coord[0]) / 2;
     this.circleY = (this.origY + coord[1]) / 2;
