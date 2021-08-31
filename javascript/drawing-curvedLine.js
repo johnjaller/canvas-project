@@ -10,7 +10,7 @@ class DrawingCurvedLine extends PaintFunction {
       if(this.line==false)
       {
         strokeStyleReal()
-      this.contextReal.linxeWidth=5
+        lineWidthReal()
     this.origX = coord[0];
     this.origY = coord[1];
       }else{
@@ -23,8 +23,7 @@ onDragging(coord,event) {
     if(this.line!=true)
     {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextReal.lineWidth=5
-    this.contextDraft.lineWidth=5
+    lineWidthDraft()
     this.contextDraft.beginPath();
     this.contextDraft.moveTo(this.origX, this.origY);
     this.midX=(this.origX + coord[0]) / 2

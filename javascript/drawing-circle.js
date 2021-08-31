@@ -6,6 +6,7 @@ class DrawingCircle extends PaintFunction {
   }
   onMouseDown(coord, event) {
     fillStyleReal()
+    lineWidthReal()
     strokeStyleReal()
     this.origX = coord[0];
     this.origY = coord[1];
@@ -15,6 +16,7 @@ class DrawingCircle extends PaintFunction {
       //clear all the context on the screen
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       fillStyleDraft()
+      lineWidthDraft()
       strokeStyleDraft()
     this.contextDraft.beginPath();
     this.circleX = (this.origX + coord[0]) / 2;

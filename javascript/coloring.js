@@ -16,6 +16,3 @@ function strokeStyleDraft() {
   contextDraft.strokeStyle = strokeColor;
 }
 
-$("#width").on("change", function () {
-  $(body).append()
-});
