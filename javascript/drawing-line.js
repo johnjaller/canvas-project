@@ -4,7 +4,7 @@
  * This class extends the PaintFunction class, which you can find in canvas-common
  * Remember, order matters
  ***********************************************/
-class DrawingLine extends PaintFunction {
+ class DrawingLine extends PaintFunction {
   // This class extends the PaintFunction class
   // You are only passing one instance here
 
@@ -16,7 +16,7 @@ class DrawingLine extends PaintFunction {
   // On mouse down, ensure that the pen has these features
   onMouseDown(coord, event) {
     // Fill in the color
-    this.context.strokeStyle = "#df4b26";
+    strokeStyleReal()
     // Kind of line
     this.context.lineJoin = "round";
     // Width of line
