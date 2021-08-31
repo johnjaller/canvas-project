@@ -32,110 +32,95 @@
       ></canvas>
     </div>
     <div class="buttons" id="tools-buttons">
-
       <!-- The drawing line button  -->
-            <button class="btn btn-light" id="drawing-line"
-              ><img class = "img-responsive" src ="assets/pencil.png">
-            </button>
+      <button class="btn btn-light" id="drawing-line">
+        <img class="img-responsive" src="assets/pencil.png" />
+      </button>
 
       <!-- The drawing straight line button  -->
-      <button class="btn btn-light" id="drawing-rectangle"
-        ><img class="img-responsive" src ="assets/rectangle-frame-pngrepo-com.png">
+      <button class="btn btn-light" id="drawing-rectangle">
+        <img
+          class="img-responsive"
+          src="assets/rectangle-frame-pngrepo-com.png"
+        />
       </button>
-      
+
       <!-- The drawing straight line button  -->
-      <button class="btn btn-light" id="drawing-straightline"
-      ><img class = "img-responsive" src ="assets/straight-line.png">
+      <button class="btn btn-light" id="drawing-straightline">
+        <img class="img-responsive" src="assets/straight-line.png" />
       </button>
-      
-      <span class="btn btn-info " id="drawing-circle"
-        >Drawing Circle</span
+
+      <span class="btn btn-info" id="drawing-circle">Drawing Circle</span>
+      <span class="btn btn-info" id="drawing-curvedLine"
+        >Drawing Curved line</span
       >
-      <span class="btn btn-info " id="drawing-curvedLine"
-      >Drawing Curved line</span
-    >
-      <span class="btn btn-warning " id="eraser"
-        >Eraser</span
-      >
-      <p>Fill Color</p>
-      <input type="color" value="#0000FF" id="fill">
-      <p>Stroke color</p>
-      <input type ='color' id='stroke' value="#000000">
+      <span class="btn btn-warning" id="eraser">Eraser</span>
+      <a class="btn btn-primary" onclick="exportImage(this)" download="myImage.png" >Export image</a>
+      <label for="fill">Fill color</label>
+      <input type="color" value="#0000FF" id="fill" />
+      <label for="stroke">Stroke</label>
+      <input type="color" id="stroke" value="#000000" />
+      <label for="width">width</label>
+      <input type="range" min="0" max="10" step="1" name="width" id="width" />
     </div>
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-    </script>
-   
-    <!-- The drawing functionality  -->
     <script
-    src="./javascript/coloring.js"
-    type="text/javascript"
- 
-  ></script>
-    <script
-      src="./javascript/canvas-common.js"
-      type="text/javascript"
-   
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
     ></script>
 
+    <!-- The drawing functionality  -->
+    <script src="./javascript/coloring.js" type="text/javascript"></script>
+    <script src="./javascript/export-image.js" type="text/javascript"></script>
+    <script src="./javascript/canvas-common.js" type="text/javascript"></script>
+
     <!-- The drawing line functionality  -->
-    <script
-      src="./javascript/drawing-line.js"
-      type="text/javascript"
-    ></script>
+    <script src="./javascript/drawing-line.js" type="text/javascript"></script>
     <!-- The drawing rectangle functionality  -->
     <script
       src="./javascript/drawing-rectangle.js"
       type="text/javascript"
-      
     ></script>
-      <!-- The drawing straightline functionality  -->
-      <script
+    <!-- The drawing straightline functionality  -->
+    <script
       src="./javascript/drawing-straightline.js"
       type="text/javascript"
-      
     ></script>
 
     <!-- The drawing circle functionality -->
     <script
-    src="./javascript/drawing-circle.js"
-    type="text/javascript"
-
-  ></script>
+      src="./javascript/drawing-circle.js"
+      type="text/javascript"
+    ></script>
     <script
-    src="./javascript/drawing-curvedLine.js"
-    type="text/javascript"
-
-  ></script>
-    <script
-    src="./javascript/eraser.js"
-    type="text/javascript"
-
-  ></script>
+      src="./javascript/drawing-curvedLine.js"
+      type="text/javascript"
+    ></script>
+    <script src="./javascript/eraser.js" type="text/javascript"></script>
     <script type="text/javascript">
       $(() => {
         currentFunction = new DrawingLine(contextReal);
-      }); 
+      });
       $("#drawing-straightline").click(() => {
         currentFunction = new DrawingStraightLine(contextReal, contextDraft);
-      }); 
-    
-        $("#drawing-rectangle").click(() => {
-          currentFunction = new DrawingRectangle(contextReal, contextDraft);
-        });
-        $("#drawing-line").click(() => {
-          currentFunction = new DrawingLine(contextReal);
-        });
-        $("#drawing-circle").click(() => {
-          currentFunction = new DrawingCircle(contextReal,contextDraft);
-        });
-        $("#drawing-curvedLine").click(() => {
-          currentFunction = new DrawingCurvedLine(contextReal,contextDraft);
-        });
-        $("#eraser").click(() => {
-          currentFunction = new eraser(contextReal,contextDraft);
-        });
-    
+      });
+
+      $("#drawing-rectangle").click(() => {
+        currentFunction = new DrawingRectangle(contextReal, contextDraft);
+      });
+      $("#drawing-line").click(() => {
+        currentFunction = new DrawingLine(contextReal);
+      });
+      $("#drawing-circle").click(() => {
+        currentFunction = new DrawingCircle(contextReal, contextDraft);
+      });
+      $("#drawing-curvedLine").click(() => {
+        currentFunction = new DrawingCurvedLine(contextReal, contextDraft);
+      });
+      $("#eraser").click(() => {
+        currentFunction = new eraser(contextReal, contextDraft);
+      });
     </script>
   </body>
 </html>

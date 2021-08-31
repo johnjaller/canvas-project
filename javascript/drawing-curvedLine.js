@@ -75,7 +75,7 @@ onDragging(coord,event) {
      this.contextDraft.moveTo(this.midX, this.midY);
     
         this.contextDraft.arc(this.midX,this.midY,10,0,Math.PI*2)
-        this.contextDraft.fill()
+        // this.contextDraft.fill()
         this.contextDraft.restore()
         this.line=true
     this.contextDraft.closePath();
