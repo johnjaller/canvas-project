@@ -53,6 +53,8 @@ class DrawingCircle extends PaintFunction {
     this.contextReal.closePath();
     this.contextReal.fill();
     this.contextReal.stroke();
+    history()
+
   }
   onMouseLeave() {}
   onMouseEnter() {}

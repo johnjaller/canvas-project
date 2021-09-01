@@ -96,6 +96,7 @@ onDragging(coord,event) {
       );
       this.contextReal.stroke()
       this.contextReal.closePath();
+      history()
       canvasDraft.style.cursor="default"
 
         this.line=false

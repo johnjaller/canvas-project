@@ -50,7 +50,7 @@ class DrawingStraightLine extends PaintFunction {
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         this.contextReal.lineTo(coord[0],coord[1]);
         this.contextReal.stroke();
-        
+        history()
 		}
 	
 	onMouseLeave() {}

@@ -33,7 +33,9 @@
   }
 
   onMouseMove() {}
-  onMouseUp() {}
+  onMouseUp() {
+    history()
+  }
   onMouseLeave() {}
   onMouseEnter() {}
 

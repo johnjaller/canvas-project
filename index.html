@@ -59,6 +59,8 @@
         >Drawing Curved line</span
       >
       <span class="btn btn-warning" id="eraser">Eraser</span>
+      <span class="btn btn-warning" id="undo">undo</span>
+      <span class="btn btn-success" id="redo">redo</span>
       <a class="btn btn-primary" onclick="exportImage(this)" download="myImage.png" >Export image</a>
       <!-- Styling setting -->
       <label for="fill">Fill color</label>
@@ -86,6 +88,7 @@
     <script src="./javascript/export-image.js" type="text/javascript"></script>
     <!-- The drawing functionality  -->
     <script src="./javascript/canvas-common.js" type="text/javascript"></script>
+    <script src="./javascript/undo-redo.js" type="text/javascript"></script>
 
     <!-- The drawing line functionality  -->
     <script src="./javascript/drawing-line.js" type="text/javascript"></script>
@@ -132,6 +135,12 @@
       });
       $("#eraser").click(() => {
         currentFunction = new eraser(contextReal, contextDraft);
+      });
+      $("#undo").click(() => {
+        undo()
+      });
+      $("#redo").click(() => {
+        redo()
       });
     </script>
   </body>
