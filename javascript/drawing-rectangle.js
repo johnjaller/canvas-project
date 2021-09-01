@@ -10,8 +10,8 @@ class DrawingRectangle extends PaintFunction {
     strokeStyleReal()
     strokeStyleDraft()
     fillStyleDraft()
-    this.contextReal.lineWidth=10
-    this.contextDraft.lineWidth=10
+    lineWidthDraft()
+    lineWidthReal()
     this.origX = coord[0];
     this.origY = coord[1];
   }
