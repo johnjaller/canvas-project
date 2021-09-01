@@ -33,7 +33,9 @@ class DrawingLine extends PaintFunction {
   }
 
   onMouseMove() {}
-  onMouseUp() {}
+  onMouseUp() {
+    history()
+  }
   onMouseLeave() {}
   onMouseEnter() {}
 
