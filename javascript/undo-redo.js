@@ -1,18 +1,18 @@
 let initialCanva=canvasReal.toDataURL()
 var imgList=[initialCanva]
-var step=0
+var redoList=[]
 var undoTrigger=false
 function history(){
     let currentImg=canvasReal.toDataURL()
     if(undoTrigger==false)
     {
-        step++
+
     imgList.push(currentImg)
     console.log(imgList)
     }else if(undoTrigger==true)
     {
-        step++
-        imgList.pop()
+        
+        redoList=[]
     imgList.push(currentImg)
     undoTrigger=false
     }
@@ -22,14 +22,14 @@ function clear(){
     contextReal.clearRect(0,0,canvasReal.width,canvasReal.height)
 }
 function undo(){
-    if(step>0)
+    if(imgList.length>1)
     {
-        step--
+        let undoItem=imgList.pop()
+        redoList.push(undoItem)
         clear()
         let currentCanvas= new Image()
-        currentCanvas.src=imgList[step]
+        currentCanvas.src=imgList[imgList.length-1]
         currentCanvas.onload=function(){contextReal.drawImage(currentCanvas,0,0)}
-        console.log(imgList)
         undoTrigger=true
     }
     else{
@@ -38,12 +38,13 @@ function undo(){
 }
 
 function redo(){
-    if(step<imgList.length-1)
+    if(redoList.length>0)
     {
-        step++
+        let redoItem=redoList.pop()
+        imgList.push(redoItem)
         clear()
         let currentCanvas= new Image()
-        currentCanvas.src=imgList[step]
+        currentCanvas.src=imgList[imgList.length-1]
         currentCanvas.onload=function(){contextReal.drawImage(currentCanvas,0,0)}
         console.log(imgList)
     }else{
