@@ -3,24 +3,20 @@ var imgList=[initialCanva]
 var step=0
 var undoTrigger=false
 function history(){
-    step++
     let currentImg=canvasReal.toDataURL()
-    if(imgList.length<=6&&undoTrigger==false)
+    if(undoTrigger==false)
     {
+        step++
     imgList.push(currentImg)
     console.log(imgList)
-    }else if(undoTrigger==true&&imgList.length<=6)
+    }else if(undoTrigger==true)
     {
+        step++
         imgList.pop()
     imgList.push(currentImg)
     undoTrigger=false
     }
-    else {
-        imgList.shift()
-        imgList.push(currentImg)
-    console.log(imgList)
-
-    }
+    
 }
 function clear(){
     contextReal.clearRect(0,0,canvasReal.width,canvasReal.height)
