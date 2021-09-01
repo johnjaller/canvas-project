@@ -22,7 +22,7 @@ class eraser extends PaintFunction{
     
       // Committing the element to the canvas
       onMouseUp(coord) {
-
+        history()
       }
       onMouseLeave() {
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
