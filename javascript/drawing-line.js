@@ -4,7 +4,7 @@
  * This class extends the PaintFunction class, which you can find in canvas-common
  * Remember, order matters
  ***********************************************/
-class DrawingLine extends PaintFunction {
+ class DrawingLine extends PaintFunction {
   // This class extends the PaintFunction class
   // You are only passing one instance here
 

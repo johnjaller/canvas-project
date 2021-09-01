@@ -1,11 +1,18 @@
 class DrawingStraightLine extends PaintFunction {
  
-    constructor(contextReal, contextDraft) {
-      super();
-      this.contextReal = contextReal;
-      this.contextDraft = contextDraft;
-    }
-    
+  constructor(contextReal, contextDraft) {
+    super();
+    this.contextReal = contextReal;
+    this.contextDraft = contextDraft;
+  }
+  
+  onMouseDown(coord, event) {
+      strokeStyleReal()
+      this.contextReal.lineJoin = "round";
+      this.contextReal.lineWidth = 10;
+      this.origX = coord[0];
+      this.origY = coord[1];
+  }
     onMouseDown(coord, event) {
         // Fill in the color
         strokeStyleReal()
@@ -54,4 +61,10 @@ class DrawingStraightLine extends PaintFunction {
 	}
 
 
+onMouseLeave() {}
+onMouseEnter() {}
+reset() {
+  this.click = 0;
+  this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 }
+  }

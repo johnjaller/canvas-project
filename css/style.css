@@ -1,63 +1,29 @@
 .canvas {
-  border: 1px black dotted;
+  border: 1px black solid;
   position: absolute;
-  top: 0px;
+  
+  /* top: 0px;
   bottom: 0px;
   left: 0px;
-  right: 0px;
+  right: 0px; */
+  border-radius: 15px;
+  position: absolute;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 30%);
 }
 
 #canvas-draft {
   background-color: transparent;
 }
-body {
-  overflow: visible;
-}
 #canvas-container {
-  height: 720px;
+  height: 750px;
 }
 
 
-/* //tool styling//
-.menuOpen {
-	position: absolute;
-	margin: 5px 0 0 5px;
-	padding: 5px;
-	border-radius: 20%;
-	background: rgb(204,204,204);
-	height: 50px;
-	width: 50px;
-	display: none;
-	z-index: 15;
-}
-/*Inactive toolbar on desktop mode section*/
-/* .inactive {
-	background: rgb(200,200,200);
-	margin: 5px 0 0 5px;
-	padding: 5px;
-	border-radius: 20%;
-	height: 33px;
-	width: 33px;
-	display: none;
-} */ */
-/*Tools*/
 
-/* 
-.btn-light {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  font-size: 20px;
-  line-height: 1.1;
-  text-align: center;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  color: white;
-} */ 
 
 
 .buttons {
-  background-color: #4CAF50; /* Green */
+  background-color: #3e8ad1; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;

@@ -1,10 +1,3 @@
-/**********************************************
- * Drawing Rectangle Functionality
- * ==================================
- * This class extends the PaintFunction class, which you can find in canvas-common
- ***********************************************/
-// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
-
 class DrawingRectangle extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
