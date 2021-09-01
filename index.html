@@ -42,26 +42,50 @@
       </button>
 
       <!-- The drawing straight line button  -->
+        <button class="btn btn-light" id="drawing-straightline">
+          <img class="img-responsive" src="assets/straight-line.png" />
+        </button>
+
+      <!-- The drawing curved line button  -->
+        <button class="btn btn-light" id="drawing-curvedline">
+          <img class="img-responsive" src="assets/curved-line.png" />
+        </button>
+
+      <!-- The drawing circle button  -->
+        <button class="btn btn-light" id="drawing-circle">
+          <img class="img-responsive" src="assets/circle.png" />
+        </button>
+
+      <!-- The drawing rectangle button  -->
       <button class="btn btn-light" id="drawing-rectangle">
-        <img
-          class="img-responsive"
-          src="assets/rectangle-frame-pngrepo-com.png"
-        />
+        <img class="img-responsive" src="assets/rectangle-frame-pngrepo-com.png"/>
       </button>
 
-      <!-- The drawing straight line button  -->
-      <button class="btn btn-light" id="drawing-straightline">
-        <img class="img-responsive" src="assets/straight-line.png" />
+      <!-- The insert text button  -->
+        <button class="btn btn-light" id="insert-text">
+          <img class="img-responsive" src="assets/text-box.png"/>
+        </button>
+      
+      <!-- The eraser button  -->
+        <button class="btn btn-light" id="eraser">
+          <img class="img-responsive" src="assets/eraser.png" />
+        </button>
+
+       <!-- The undo button  -->
+        <button class="btn btn-light" id="undo">
+          <img class="img-responsive" src="assets/undo.png" />
+        </button>
+
+      <!-- The redo button  -->
+      <button class="btn btn-light" id="undo">
+        <img class="img-responsive" src="assets/redo.png" />
       </button>
 
-      <span class="btn btn-info" id="drawing-circle">Drawing Circle</span>
-      <span class="btn btn-info" id="drawing-curvedLine"
-        >Drawing Curved line</span
-      >
-      <span class="btn btn-warning" id="eraser">Eraser</span>
-      <span class="btn btn-warning" id="undo">undo</span>
-      <span class="btn btn-success" id="redo">redo</span>
+
+
+
       <a class="btn btn-primary" onclick="exportImage(this)" download="myImage.png" >Export image</a>
+
       <!-- Styling setting -->
       <label for="fill">Fill color</label>
       <input type="color" value="#0000FF" id="fill" />
@@ -73,6 +97,7 @@
       <input type="range" min="10" max="100" step="10" name="eraser-size" id="eraserSize" />
       <p class="eraserSize-text"></p>
     </div>
+
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -80,58 +105,44 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- The styling functionality -->
+    <!-- JS Scripts -->
+    <script src="./javascript/canvas-common.js" type="text/javascript"></script>
+
+    <script src="./javascript/drawing-line.js" type="text/javascript"></script>
+    <script src="./javascript/drawing-straightline.js" type="text/javascript"></script>
+    <script src="./javascript/drawing-curvedLine.js" type="text/javascript"></script>
+    <script src="./javascript/drawing-circle.js" type="text/javascript"></script>
+    <script src="./javascript/drawing-rectangle.js" type="text/javascript"></script>
+    <script src="./javascript/insert-text.js" type="text/javascript"></script>
+     <script src="./javascript/eraser.js" type="text/javascript"></script>
     <script src="./javascript/eraser-size.js" type="text/javascript"></script>
     <script src="./javascript/lineWidth.js" type="text/javascript"></script>
     <script src="./javascript/coloring.js" type="text/javascript"></script>
-    <!-- Image export functionality -->
-    <script src="./javascript/export-image.js" type="text/javascript"></script>
-    <!-- The drawing functionality  -->
-    <script src="./javascript/canvas-common.js" type="text/javascript"></script>
     <script src="./javascript/undo-redo.js" type="text/javascript"></script>
+    <script src="./javascript/export-image.js" type="text/javascript"></script>
+  
+  
 
-    <!-- The drawing line functionality  -->
-    <script src="./javascript/drawing-line.js" type="text/javascript"></script>
-    <!-- The drawing rectangle functionality  -->
-    <script
-      src="./javascript/drawing-rectangle.js"
-      type="text/javascript"
-    ></script>
-    <!-- The drawing straightline functionality  -->
-    <script
-      src="./javascript/drawing-straightline.js"
-      type="text/javascript"
-    ></script>
-
-    <!-- The drawing circle functionality -->
-    <script
-      src="./javascript/drawing-circle.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="./javascript/drawing-curvedLine.js"
-      type="text/javascript"
-    ></script>
-    <script src="./javascript/eraser.js" type="text/javascript"></script>
     <script type="text/javascript">
-      $(() => {
+      $(() => { currentFunction = new DrawingLine(contextReal);});
+
+      $("#drawing-line").click(() => {
         currentFunction = new DrawingLine(contextReal);
       });
       $("#drawing-straightline").click(() => {
         currentFunction = new DrawingStraightLine(contextReal, contextDraft);
       });
-
-      $("#drawing-rectangle").click(() => {
-        currentFunction = new DrawingRectangle(contextReal, contextDraft);
-      });
-      $("#drawing-line").click(() => {
-        currentFunction = new DrawingLine(contextReal);
+      $("#drawing-curvedLine").click(() => {
+        currentFunction = new DrawingCurvedLine(contextReal, contextDraft);
       });
       $("#drawing-circle").click(() => {
         currentFunction = new DrawingCircle(contextReal, contextDraft);
       });
-      $("#drawing-curvedLine").click(() => {
-        currentFunction = new DrawingCurvedLine(contextReal, contextDraft);
+      $("#drawing-rectangle").click(() => {
+        currentFunction = new DrawingRectangle(contextReal, contextDraft);
+      });
+      $("#insert-text").click(() => {
+        currentFunction = new InsertText(contextReal);
       });
       $("#eraser").click(() => {
         currentFunction = new eraser(contextReal, contextDraft);

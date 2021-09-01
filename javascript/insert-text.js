@@ -12,15 +12,15 @@ class InsertText extends PaintFunction {
            display: "block", 
            position: "absolute",
            font: "50px, Arial",
-           top:this.origY, 
-           left: this.origX,
-           transform:"translate(50%,100%)"
+           top: event.clientY, 
+           left: event.clientX,
+           
         });
         $("#textInput").keydown((event)=>{
           if (event.key == "Enter"){
             let text = $("#textInput").val();
             this.contextReal.font="50px Arial"
-            this.contextReal.fillText(text, coord[0], coord[1]);
+            this.contextReal.fillText(text, this.origX, this.origY);
             $("#textInput").css({display: "none"});
             $("#textInput").val("")
 
