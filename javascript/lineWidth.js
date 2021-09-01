@@ -1,6 +1,6 @@
 let width= $("#width").val()
 $(".width-text").html(`Current width: ${width}`);
-  $("#width").on("change", function () {
+  $("#width").on("input", function () {
     width= $("#width").val()
 $(".width-text").html(`Current width: ${width}`);
     
