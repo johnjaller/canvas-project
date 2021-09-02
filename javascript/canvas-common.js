@@ -46,6 +46,7 @@ $("#canvas-draft").mouseenter(function (e) {
   currentFunction.onMouseEnter([mouseX, mouseY], e);
 });
 
+
 /** # Class (all classes will have these methods) #
 /*  ====================== */
 class PaintFunction {
