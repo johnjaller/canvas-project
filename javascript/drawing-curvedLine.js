@@ -1,4 +1,4 @@
-class DrawingCurvedLine extends PaintFunction {
+  class DrawingCurvedLine extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
     this.contextReal = contextReal;
@@ -68,16 +68,8 @@ onDragging(coord,event) {
     {
      this.endX=coord[0]
      this.endY=coord[1]
-     this.contextDraft.save()
-     this.contextDraft.lineWidth=1
-     this.contextDraft.fillStyle="blue"
-     this.contextDraft.moveTo(this.midX, this.midY);
     
-        this.contextDraft.arc(this.midX,this.midY,10,0,Math.PI*2)
-        // this.contextDraft.fill()
-        this.contextDraft.restore()
         this.line=true
-    this.contextDraft.closePath();
 
     }else{
         console.log("hello")

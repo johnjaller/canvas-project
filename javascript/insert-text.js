@@ -22,9 +22,7 @@ class InsertText extends PaintFunction {
             this.contextReal.font="50px Arial"
             this.contextReal.fillText(text, this.origX, this.origY);
             $("#textInput").css({display: "none"});
-            $("#textInput").val("")
-
-            // $("#textInput").val("");
+            $("#textInput").val("");
         }
         
     })
