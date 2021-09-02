@@ -96,8 +96,8 @@
       <p class="width-text"></p>
       <input type="range" min="10" max="100" step="10" name="eraser-size" id="eraserSize" />
       <p class="eraserSize-text"></p>
-      <label class="zoom-text" for="zoom-level"></label>
-      <input type="range" name="zoom-level" min="10" value="100" max="200" id="zoom-level">
+      <button class="btn btn-primary" id="zoom-in">zoom in</button>
+      <button class="btn btn-danger" id="zoom-out">zoom out</button>
     </div>
 
     <!-- jQuery -->
@@ -123,11 +123,10 @@
     <!-- Image export functionality -->
     <script src="./javascript/export-image.js" type="text/javascript"></script>
     <!-- The drawing functionality  -->
-    <script src="./javascript/zoomIn-zoomOut.js" type="text/javascript"></script>
+    <script src="./javascript/keyboard-listener.js"  type="text/javascript"></script>
+    <script src="./javascript/canvas-common.js" type="text/javascript"></script>
     <script src="./javascript/undo-redo.js" type="text/javascript"></script>
-    <script src="./javascript/export-image.js" type="text/javascript"></script>
-  
-  
+    <script src="./javascript/zoomIn-zoomOut.js" type="text/javascript"></script>
 
     <script type="text/javascript">
       $(() => { currentFunction = new DrawingLine(contextReal);});
