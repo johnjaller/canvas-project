@@ -36,3 +36,9 @@ img {
 width: 40px;
   height: 40px;
 }
+#eraserSize{
+  display: none;
+}
+.eraserSize-text{
+  display: none;
+}

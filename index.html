@@ -63,6 +63,7 @@
       <span class="btn btn-success" id="redo">redo</span>
       <a class="btn btn-primary" onclick="exportImage(this)" download="myImage.png" >Export image</a>
       <!-- Styling setting -->
+      <div class="styling">
       <label for="fill">Fill color</label>
       <input type="color" value="#0000FF" id="fill" />
       <label for="stroke">Stroke color</label>
@@ -70,6 +71,7 @@
       <label for="width">width</label>
       <input type="range" min="1" max="10" step="1" name="width" id="width" />
       <p class="width-text"></p>
+    </div>
       <input type="range" min="10" max="100" step="10" name="eraser-size" id="eraserSize" />
       <p class="eraserSize-text"></p>
       <button class="btn btn-primary" id="zoom-in">zoom in</button>
@@ -123,22 +125,36 @@
       });
       $("#drawing-straightline").click(() => {
         currentFunction = new DrawingStraightLine(contextReal, contextDraft);
+        $(".styling").show();
+
       });
 
       $("#drawing-rectangle").click(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        $(".styling").show();
+
       });
       $("#drawing-line").click(() => {
         currentFunction = new DrawingLine(contextReal);
+        $(".styling").show();
+
       });
       $("#drawing-circle").click(() => {
         currentFunction = new DrawingCircle(contextReal, contextDraft);
+        $(".styling").show();
+
       });
       $("#drawing-curvedLine").click(() => {
         currentFunction = new DrawingCurvedLine(contextReal, contextDraft);
+        $(".styling").show();
+
       });
       $("#eraser").click(() => {
         currentFunction = new eraser(contextReal, contextDraft);
+
+        $(".styling").slideUp();
+        $("#eraserSize").slideDown();
+        $(".eraserSize-text").slideDown();
       });
       $("#undo").click(() => {
         undo()

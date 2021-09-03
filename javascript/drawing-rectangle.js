@@ -26,18 +26,8 @@ class DrawingRectangle extends PaintFunction {
       canvasDraft.height
     );
     // Pass in the original x and y coordinates, followed by the new coordinates that we get for position x and y
-    this.contextDraft.fillRect(
-      this.origX,
-      this.origY,
-      coord[0] - this.origX,
-      coord[1] - this.origY
-    );
-    this.contextDraft.strokeRect(
-      this.origX,
-      this.origY,
-      coord[0] - this.origX,
-      coord[1] - this.origY
-    );
+  this.contextDraft.filter="opacity(40%)"
+   this.drawRectangleDraft(this.origX,this.origY,coord[0]-this.origX,coord[1]-this.origY)
   }
 
   onMouseMove() {}
@@ -53,21 +43,39 @@ class DrawingRectangle extends PaintFunction {
     );
     // Commit that drawing to context real
     // Without this commit, it won't actually draw
-    this.contextReal.fillRect(
-      this.origX,
-      this.origY,
-      coord[0] - this.origX,
-      coord[1] - this.origY
-    );
-    this.contextReal.strokeRect(
-      this.origX,
-      this.origY,
-      coord[0] - this.origX,
-      coord[1] - this.origY
-    );
+   this.drawRectangleReal(this.origX,this.origY,coord[0]-this.origX,coord[1]-this.origY)
+    
    history()
    
   }
   onMouseLeave() {}
   onMouseEnter() {}
+  drawRectangleDraft(x,y,width,height){
+    this.contextDraft.fillRect(
+      x,
+      y,
+      width,
+      height
+    );
+    this.contextDraft.strokeRect(
+      x,
+      y,
+      width,
+      height
+    );
+  }
+  drawRectangleReal(x,y,width,height){
+    this.contextReal.fillRect(
+      x,
+      y,
+      width,
+      height
+    );
+    this.contextReal.strokeRect(
+      x,
+      y,
+      width,
+      height
+    );
+  }
 }
