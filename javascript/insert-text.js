@@ -18,13 +18,14 @@ class InsertText extends PaintFunction {
         });
         $("#textInput").keydown((event)=>{
           if (event.key == "Enter"){
+            console.log(this.origX)
             let text = $("#textInput").val();
             this.contextReal.font="50px Arial"
             this.contextReal.fillText(text, this.origX, this.origY);
             $("#textInput").css({display: "none"});
             $("#textInput").val("");
         }
-        
+        history()
     })
       }
 
