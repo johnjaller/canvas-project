@@ -24,7 +24,7 @@ class InsertText extends PaintFunction {
             $("#textInput").css({display: "none"});
             $("#textInput").val("");
         }
-        
+        history()
     })
       }
 

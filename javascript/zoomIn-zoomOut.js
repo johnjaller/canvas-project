@@ -6,9 +6,9 @@ $("#zoom-in").on("click", function () {
     currentScale=currentScale+zoomScale
     let newWidth=canvasReal.width*currentScale
     let newHeight=canvasReal.height*currentScale
+    contextReal.clearRect(0,0,canvasReal.width,canvasReal.height)
     contextReal.save()
     contextReal.translate(-((newWidth-canvasReal.width)/2), -((newHeight-canvasReal.height)/2));
-    contextReal.clearRect(0,0,canvasReal.width,canvasReal.height)
     contextReal.scale(currentScale,currentScale)
     let currentCanvas= new Image()
     currentCanvas.src=canva
@@ -20,9 +20,9 @@ $("#zoom-out").on("click", function () {
     currentScale=currentScale-zoomScale
     let newWidth=canvasReal.width*currentScale
     let newHeight=canvasReal.height*currentScale
+    contextReal.clearRect(0,0,canvasReal.width,canvasReal.height)
     contextReal.save()
     contextReal.translate(-((newWidth-canvasReal.width)/2), -((newHeight-canvasReal.height)/2));
-    contextReal.clearRect(0,0,canvasReal.width,canvasReal.height)
     contextReal.scale(currentScale,currentScale)
     let currentCanvas= new Image()
     currentCanvas.src=canva

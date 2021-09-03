@@ -20,10 +20,13 @@ class DrawingStraightLine extends PaintFunction {
         // this.contextDraft.strokeStyle="#aaaa"
         // Kind of line
         this.contextDraft.lineJoin = "round";
+  this.contextDraft.filter="opacity(40%)"
+
         // Width of line
         lineWidthDraft()
         if(currentKey==="Shift"){
           this.reset()
+          
           this.drawDraft(this.origX,this.origY,coord[0],this.origY)
           
 

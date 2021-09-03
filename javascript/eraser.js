@@ -1,4 +1,3 @@
-
 class eraser extends PaintFunction{
     constructor(contextReal, contextDraft) {
         super();
