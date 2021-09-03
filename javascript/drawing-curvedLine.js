@@ -7,15 +7,37 @@
   }
 
   onMouseDown(coord,event) {
+    this.dragX=coord[0]
+    this.dragY=coord[1]
       if(this.line==false)
       {
         strokeStyleReal()
         lineWidthReal()
     this.origX = coord[0];
     this.origY = coord[1];
-      }else{
+      }else if((this.dragX-this.midX)**2+(this.dragY-this.midY)**2<100&&this.line==true){
           console.log("success")
-          return;
+          this.dragX=coord[0]
+          this.dragY=coord[1]
+      }else{
+        this.line==true
+        this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+
+        this.contextReal.beginPath()
+    
+        // this.contextReal.moveTo(this.origX, this.origY);
+        this.contextReal.moveTo(this.origX, this.origY);
+    
+        this.contextReal.quadraticCurveTo(
+            this.midX,
+            this.midY,
+            this.endX,
+            this.endY
+          );
+          this.contextReal.stroke()
+          this.contextReal.closePath();
+          history()
+          canvasDraft.style.cursor="default"
       }
       
 }
@@ -36,13 +58,11 @@ onDragging(coord,event) {
     );
     this.contextDraft.stroke()
     this.contextDraft.closePath();
-    }else{
+    }else if((this.dragX-this.origMidX)**2+(this.dragY-this.origMidY)**2<100&&this.line==true){
         canvasDraft.style.cursor="move"
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextDraft.beginPath();
     this.contextDraft.moveTo(this.origX, this.origY);
-        this.origMidX=this.midX
-        this.origMidY=this.midY
         this.midX=this.midX+(coord[0]-this.midX)
         this.midY=this.midY+(coord[1]-this.midY)
         this.contextDraft.quadraticCurveTo(
@@ -68,6 +88,8 @@ onDragging(coord,event) {
     {
      this.endX=coord[0]
      this.endY=coord[1]
+     this.origMidX=this.midX
+     this.origMidY=this.midY
     
         this.line=true
 

@@ -1,7 +1,3 @@
-/**********************************************
- * The Canvas
- * ==================================
- ***********************************************/
 let canvasReal = document.getElementById("canvas-real");
 let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvas-draft");
@@ -37,7 +33,7 @@ $("#canvas-draft").mouseleave(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
   currentFunction.onMouseLeave([mouseX, mouseY], e);
-  
+  filter()
 });
 
 $("#canvas-draft").mouseenter(function (e) {
