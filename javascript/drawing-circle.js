@@ -12,30 +12,22 @@ class DrawingCircle extends PaintFunction {
     this.origY = coord[1];
   }
   onDragging(coord, event) {
-      
-      //clear all the context on the screen
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       fillStyleDraft()
       lineWidthDraft()
       strokeStyleDraft()
       this.circleX = (this.origX + coord[0]) / 2;
-      this.circleY = (this.origY + coord[1]) / 2;
-      
+      this.circleY = (this.origY + coord[1]) / 2;    
       this.radius = Math.sqrt(
         (this.origX - this.circleX) ** 2 + (this.origY - this.circleY) ** 2
         );
-        this.drawCircleDraft(this.circleX,this.circleY,this.radius)
-      
+        this.drawCircleDraft(this.circleX,this.circleY,this.radius)   
   }
   onMouseMove() {}
   onMouseUp(coord) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    // Commit that drawing to context real
-    // Without this commit, it won't actually draw
     this.drawCircleReal(this.circleX,this.circleY,this.radius)
-
-    history()
-
+    history() //log to history
   }
   onMouseLeave() {}
   onMouseEnter() {}
@@ -44,13 +36,7 @@ class DrawingCircle extends PaintFunction {
 this.contextDraft.save()
   this.contextDraft.beginPath();
   this.contextDraft.filter="opacity(40%)"
-  this.contextDraft.arc(
-    x - 5,
-    y - 5,
-    r,
-    0,
-    Math.PI * 2
-  );
+  this.contextDraft.arc(x - 5,y - 5,r,0,Math.PI * 2);
   this.contextDraft.fill();
   this.contextDraft.stroke();
   this.contextDraft.closePath();
@@ -59,13 +45,7 @@ this.contextDraft.save()
 drawCircleReal(x,y,r)
 {
   this.contextReal.beginPath();
-  this.contextReal.arc(
-    x - 5,
-    y - 5,
-    r,
-    0,
-    Math.PI * 2
-  );
+  this.contextReal.arc(x - 5,y - 5,r,0,Math.PI * 2);
   this.contextReal.fill();
   this.contextReal.stroke();
   this.contextReal.closePath();

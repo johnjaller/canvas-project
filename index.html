@@ -55,6 +55,7 @@
       </button>
 
       <span class="btn btn-info" id="drawing-circle">Drawing Circle</span>
+      <span class="btn btn-info" id="drawing-ellipse">Drawing Ellipse</span>
       <span class="btn btn-info" id="drawing-curvedLine"
         >Drawing Curved line</span
       >
@@ -72,6 +73,7 @@
         <input type="range" min="1" max="10" step="1" name="width" id="width" />
         <p class="width-text"></p>
       </div>
+      <!-- eraser setting -->
       <div class="eraser-setting">
       <span class="btn btn-warning" id="eraser-circle">Circle Eraser</span>
       <input type="range" min="10" max="100" step="10" name="eraser-size" id="eraserSize" />
@@ -119,6 +121,10 @@
       type="text/javascript"
     ></script>
     <script
+    src="./javascript/ellipse.js"
+    type="text/javascript"
+  ></script>
+    <script
       src="./javascript/drawing-curvedLine.js"
       type="text/javascript"
     ></script>
@@ -154,6 +160,11 @@
       });
       $("#drawing-circle").click(() => {
         currentFunction = new DrawingCircle(contextReal, contextDraft);
+        $(".styling").slideDown();
+        $(".eraser-setting").slideUp();
+      });
+      $("#drawing-ellipse").click(() => {
+        currentFunction = new DrawingEllipse(contextReal, contextDraft);
         $(".styling").slideDown();
         $(".eraser-setting").slideUp();
 

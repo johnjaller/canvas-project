@@ -5,28 +5,17 @@ class eraserCircle extends PaintFunction{
         this.contextDraft = contextDraft;
       }
       onMouseDown(coord, event) {
-        this.contextReal.save()
-        this.contextReal.ellipse(coord[0],coord[1],eraserSize,eraserSize,0,0,Math.PI*2)
-        this.contextReal.clip()
-        this.contextReal.clearRect(coord[0]-eraserSize,coord[1]-eraserSize,eraserSize*2,eraserSize*2)
-        this.contextReal.restore()
- 
+        
+    this.eraserReal(coord[0],coord[1])
       }
     
       onDragging(coord, event) {
-        this.contextReal.save()
-        this.contextReal.ellipse(coord[0],coord[1],eraserSize,eraserSize,0,0,Math.PI*2)
-        this.contextReal.clip()
-        this.contextReal.clearRect(coord[0]-eraserSize,coord[1]-eraserSize,eraserSize*2,eraserSize*2)
-        this.contextReal.restore()
+        this.eraserReal(coord[0],coord[1])
       }
     
       onMouseMove(coord,e) {
           this.clear()
-          this.contextDraft.beginPath()
-        this.contextDraft.ellipse(coord[0],coord[1],eraserSize,eraserSize,0,0,Math.PI*2)
-        this.contextDraft.stroke()
-        this.contextDraft.closePath()
+         this.eraserDraft(coord[0],coord[1])
       }
     
       // Committing the element to the canvas
@@ -41,6 +30,18 @@ class eraserCircle extends PaintFunction{
       }
      clear(){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
-
+     }
+     eraserDraft(x,y){
+        this.contextDraft.beginPath()
+        this.contextDraft.ellipse(x,y,eraserSize,eraserSize,0,0,Math.PI*2)
+        this.contextDraft.stroke()
+        this.contextDraft.closePath()
+     }
+     eraserReal(x,y){
+        this.contextReal.save()
+        this.contextReal.ellipse(x,y,eraserSize,eraserSize,0,0,Math.PI*2)
+        this.contextReal.clip()
+        this.contextReal.clearRect(x-eraserSize,y-eraserSize,eraserSize*2,eraserSize*2)
+        this.contextReal.restore()
      }
 }
