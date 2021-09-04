@@ -2,30 +2,32 @@ class InsertText extends PaintFunction {
     constructor(contextReal) {
       super();
       this.contextReal = contextReal;
+
     }
-  
     onMouseDown(coord, event) {
-        this.origX = coord[0];
-        this.origY = coord[1];
-  
+      this.origX = coord[0];
+      this.origY = coord[1];
+      this.font=$("#font-select").val();
+
        $("#textInput").css({
            display: "block", 
            position: "absolute",
-           font: "50px, Arial",
+           font: `${fontSize}px, ${this.font}`,
            top: event.clientY, 
            left: event.clientX,
            
         });
         $("#textInput").keydown((event)=>{
+          // coord[0]=coord[0]
+          // coord[1]=coord[1]
           if (event.key == "Enter"){
-            console.log(this.origX)
             let text = $("#textInput").val();
-            this.contextReal.font="50px Arial"
+            this.contextReal.font=`${fontSize}px ${this.font}`
             this.contextReal.fillText(text, this.origX, this.origY);
             $("#textInput").css({display: "none"});
             $("#textInput").val("");
-        }
         history()
+        }
     })
       }
 
