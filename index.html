@@ -93,6 +93,7 @@
       </button>
 
       <span class="btn btn-info" id="filling-bucket">Fill bucket</span>
+      <span class="btn btn-info" id="sticker">sticker</span>
 
       <!-- The redo button  -->
       <a class="btn btn-light" onclick="exportImage(this)" download="myImage.png" >
@@ -130,6 +131,11 @@
         <input type="range" min="10" value="15" max="50" id="fontSize">
         <label for="font-size" id="font-text"></label>
       </div>
+      <div class="sticker-">
+       <span id="rickroll"> <img src="./assets/rickroll.jpg" alt=""></span>
+       <span id="yodawg"><img src="./assets/yodawg.jpg" alt=""></span>
+       <span id="drake"> <img src="./assets/drake.png" alt=""></span>
+      </div>
 
    <!-- filter setting -->
   <div class = 'range-container' id = "filter-sliders">
@@ -166,6 +172,7 @@
 
     <!-- JS Scripts -->
     <script src="./javascript/canvas-common.js" type="text/javascript"></script>
+    <script src="./javascript/sticker.js" type="text/javascript"></script>
     <script src="./javascript/font-setting.js" type="text/javascript"></script>
     <script src="./javascript/eraser-size.js" type="text/javascript"></script>
     <script src="./javascript/lineWidth.js" type="text/javascript"></script>
@@ -247,6 +254,13 @@
         currentFunction = new InsertText(contextReal)
         $(".font-setting").slideDown();
         $(".styling").slideDown();
+        $(".stroke-style").slideDown();
+        $(".eraser-setting").slideUp();
+      })
+      $("#sticker").click(() => {
+        currentFunction = new sticker(contextReal,contextDraft)
+        $(".font-setting").slideUp();
+        $(".styling").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
       })

@@ -33,7 +33,6 @@ $("#canvas-draft").mouseleave(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
   currentFunction.onMouseLeave([mouseX, mouseY], e);
-  filter()
 });
 
 $("#canvas-draft").mouseenter(function (e) {

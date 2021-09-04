@@ -47,6 +47,7 @@ onDragging(coord,event) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     lineWidthDraft()
     this.contextDraft.beginPath();
+    this.contextDraft.setLineDash([5, 15])
     this.contextDraft.moveTo(this.origX, this.origY);
     this.midX=(this.origX + coord[0]) / 2
     this.midY=(this.origY + coord[1]) / 2
