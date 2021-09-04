@@ -28,13 +28,14 @@ class fillingBucket extends PaintFunction {
     let startR = img.data[startPos];
     let startG = img.data[startPos + 1];
     let startB = img.data[startPos + 2];
+    let checkCoord,checkX,checkY,checkingPx,right,left
     while (coordArr.length) {
-      let checkCoord = coordArr.pop();
-      let checkX = checkCoord[0];
-      let checkY = checkCoord[1];
-      let checkingPx = (checkY * canvasReal.width + checkX) * 4;
-      let right = false;
-      let left = false;
+      checkCoord = coordArr.pop();
+      checkX = checkCoord[0];
+      checkY = checkCoord[1];
+      checkingPx = (checkY * canvasReal.width + checkX) * 4;
+      right = false;
+      left = false;
       while (checkY-- >= 0 && matchStartColor(checkingPx)) {
           checkY--;
         checkingPx = checkingPx - canvasReal.width * 4;
