@@ -9,10 +9,6 @@ $(document).keydown(function (e) {
     }else{
         currentKey=e.key
     }
-}
-);
-$(document).keyup(function () { 
-    currentKey=" "
-    console.log(currentKey)
-
-});
+    
+  }
+)

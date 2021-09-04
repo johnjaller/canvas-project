@@ -25,6 +25,7 @@ class DrawingCircle extends PaintFunction {
   }
   onMouseMove() {}
   onMouseUp(coord) {
+    console.log($("#fill").val())
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.drawCircleReal(this.circleX,this.circleY,this.radius)
     history() //log to history

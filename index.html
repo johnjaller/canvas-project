@@ -15,9 +15,10 @@
       crossorigin="anonymous"
     />
   </head>
-
-  <body class="container">
-    <h1>Canvas Application Project</h1>
+ 
+  <body class="container-fluid" >
+   <h1>Canvas Application Project</h1>
+   <section id="all-container">
     <div id="canvas-container">
       <canvas
         id="canvas-real"
@@ -35,7 +36,7 @@
       <input id="textInput" placeholder="Type here & Enter" name="inputField" value="" style="display: none"></input>
 
     </div>
-    <div class="buttons" id="tools-buttons">
+    <div class="button-list grid" id="tools-buttons">
       <!-- The drawing line button  -->
       <button class="btn btn-light" id="drawing-line">
         <img class="img-responsive" src="assets/pencil.png" />
@@ -55,6 +56,11 @@
         <button class="btn btn-light" id="drawing-circle">
           <img class="img-responsive" src="assets/circle.png" />
         </button>
+        
+      <!-- The drawing elliptical circle button  -->
+        <button class="btn btn-light" id="drawing-ellipse">
+          <img class="img-responsive" src="assets/Elliptical-circle.png" />
+        </button>
 
       <!-- The drawing rectangle button  -->
       <button class="btn btn-light" id="drawing-rectangle">
@@ -67,9 +73,9 @@
         </button>
 
      <!-- The filter button  -->
-        
-        <button class="btn btn-primary" id="filter">filter</button>
-
+        <button class="btn btn-light" id="filter">
+          <img class="img-responsive" src="assets/filter.png"/>
+        </button>
       
       <!-- The eraser button  -->
         <button class="btn btn-light" id="eraser">
@@ -82,29 +88,30 @@
         </button>
 
       <!-- The redo button  -->
-      <button class="btn btn-light" id="undo">
+      <button class="btn btn-light" id="redo">
         <img class="img-responsive" src="assets/redo.png" />
       </button>
 
-      <span class="btn btn-info" id="drawing-ellipse">Drawing Ellipse</span>
       <span class="btn btn-info" id="filling-bucket">Fill bucket</span>
 
+      <!-- The redo button  -->
+      <a class="btn btn-light" onclick="exportImage(this)" download="myImage.png" >
+        <img class="img-responsibe" src="assets/export.png"></a>
 
 
-      <a class="btn btn-primary" onclick="exportImage(this)" download="myImage.png" >Export image</a>
+        <button class="btn btn-light" id="zoom-in">zoom in</button>
+        <button class="btn btn-light" id="zoom-out">zoom out</button>
       
-
+    
       <!-- Styling setting -->
       <div class="styling">
         <label for="fill">Fill color</label>
-        <input type="color" value="#ffffff" id="fill" />
-        <div class="stroke-style">
-          <label for="stroke">Stroke color</label>
-          <input type="color" id="stroke" value="#000000" />
-          <label for="width">width</label>
-          <input type="range" min="1" max="10" step="1" name="width" id="width" />
-          <p class="width-text"></p>
-        </div>
+        <input type="color" value="#FCF75E" id="fill" />
+        <label for="stroke">Stroke color</label>
+        <input type="color" id="stroke" value="#000000" />
+        <label for="width">width</label>
+        <input type="range" min="1" max="10" step="1" name="width" id="width" />
+        <p class="width-text"></p>
       </div>
       <!-- eraser setting -->
       <div class="eraser-setting">
@@ -112,40 +119,34 @@
       <input type="range" min="10" max="100" step="10" name="eraser-size" id="eraserSize" />
       <p class="eraserSize-text"></p>
       </div>
-      <button class="btn btn-primary" id="zoom-in">zoom in</button>
-      <button class="btn btn-danger" id="zoom-out">zoom out</button>
+ 
 
    <!-- filter setting -->
-   <div class = 'range-container' id = "filter-sliders">
- 
+  <div class = 'range-container' id = "filter-sliders">
+    <div class = 'filter-slider-indiv'>
+        <form>
+            <div class="form-group-left filter-boxes">
                 <label>Blur</label>
                 <input id = "blur-range" type="range" class="filter-control-range" min = 0 max = 10 value = 0 step = 1
                 style="width:85px">
     
                     <label>Brightness</label>
-                <input id = "brightness-range" type="range" class="filter-control-range filter-right" min = 0 max = 2 value = 1 step = 0.1
- 
+                <input id = "brightness-range" type="range" class="filter-control-range filter-right" min = 0 max = 200 value = 100 step = 1
+                 style="width:85px">
+            </div>
+        </form>
+    </div>
+    <div class = 'filter-slider-indiv'>
+        <form>
+            <div class="form-group-left filter-boxes">
                 <label>Grayscale</label>
                 <input id = "grayscale-range" type="range" class="filter-control-range" min = 0 max = 100 value = 0 step = 1
                  style="width:85px">
- 
-  </div>
-      <!-- <div id="filtercontainer">
-          <div class="blurcontainer">
-            <label for="blur">Blur</label><br>
-            <input type="range" min="0" max="40" value="0" id="blur">
-          </div>fillColorB
-          <div class="brightcontainer">
-            <label for="brightness">Brightness</label><br>
-            <input type="range" min="0" max="100" value="100" id="brightness">
-          </div>
-          <div class="contrastcontainer">
-            <label for="contrast">Contrast</label><br>
-            <input type="range" min="0" max="100" value="100" id="contrast">
-          </div>
-        
-      </div> -->
-    
+            </div>
+        </form>
+    </div>
+      
+  </section>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -170,6 +171,7 @@
     <script src="./javascript/filter.js" type="text/javascript"></script>
     <script src="./javascript/export-image.js" type="text/javascript"></script>
     <script src="./javascript/keyboard-listener.js"  type="text/javascript"></script>
+    
     <script src="./javascript/eraser-circle.js" type="text/javascript"></script>
     <script src="./javascript/zoomIn-zoomOut.js" type="text/javascript"></script>
     <script src="./javascript/undo-redo.js" type="text/javascript"></script>

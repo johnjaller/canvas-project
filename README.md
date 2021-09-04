@@ -1,54 +1,30 @@
-# Canvas Application :rocket:
+# Canvas Application 
 
-#### Tip:
-
-Try removing lines of code to see how it works together. Go slow, and read the documentation. Also, looking at different examples online might be helpful!
-
-#### Examples:
-
-- the-canvas-boys.surge.sh
-- http://canvasg2march.surge.sh/
-
-### How to run this package
-
-- Make sure you clone the repository
-
-- Double click on index.html
-
-### How it works :open_book:
-
-In the javascript folder, there are various functionalities for the canvas application (please implement more, here)
-
-- javascript
-  - canvas-common.js
-  - drawing-line.js
-  - drawing-rectangle.js
-- css
-  - style.css
 
 ## Sprint :athletic_shoe:
 
-| Done? | Component                         | Priority | Estimated Time | Actual Time |
-| ----- | --------------------------------- | :------: | :------------: | :---------: |
-|       | Read Documentation                |    M     |                |             |
-|       | Write down a list of requirements |    M     |                |             |
-|       | Look over the code                |    M     |                |             |
-|       | Functionality 1: Circle           |    M     |                |             |
-|       | Functionality 2: Eraser           |    M     |                |             |
-|       | Functionality 3: (You choose!)    |    M     |                |             |
-|       | Functionality 4:                  |    M     |                |             |
-|       | Functionality 5:                  |    M     |                |             |
-|       | Functionality 6:                  |    M     |                |             |
+| Functionality          | Description                          
+| -----------------------| ------------------------------------------------------------------------------------
+| Pencil                 | Used to draw an arbitrary line                
+| Straight Line          | Used to draw a straight line (Press Shift for horizontal, Control for vertical)
+| Curved Line            | Used to draw a curved line               
+| Circle                 | Used to draw an adjustable sized regular circle        
+| Elliptical circle      | Used to draw an adjustable sized elliptical circle   
+| Rectangle              | Used to draw an adjustable sized rectangle  
+| Text Box               | For inserting text (Press Enter for confirming)                
+| Filter                 | To adjust the blurriness, brightness and greyscale for the following specified objects 
+| Eraser                 | Erase any object on the canvas (default is a square-shaped eraser)                
+| Circle eraser          | Can be switched to a circle-shaped eraser                 
+| Eraser width           | Adjustable eraser size               
+| Undo                   | Cancel the last action                  
+| Redo                   | Reverse the undo                 
+| Zoom in                | Zoom in makes canvas objects bigger           
+| Zoom out               | Zoom out makes canvas objects smaller               
+| Export Canvas          | Download canvas as JPEG image             
+| Fill color             | Changes the color of the filling of objects                
+| Stroke color           | Changes the color of outline of objects                 
 
-- [Further Documentation and Tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
+
 
 ## Issues and Resolutions :flashlight:
 
-**ERROR**: :gear:
-**RESOLUTION**: :key:
-
-| Issue             | Where it occurs |  Possible solution   |   Actual solution    |
-| ----------------- | :-------------: | :------------------: | :------------------: |
-| Unsure what to do |        H        | Creating a checklist | Creating a checklist |
-
-#### What is one thing that I learned from doing this project? :books:

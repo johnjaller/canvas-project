@@ -1,11 +1,6 @@
 .canvas {
   border: 1px black solid;
-  position: absolute;
-  
-  /* top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px; */
+  left: 20vw;
   border-radius: 15px;
   position: absolute;
   box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 30%);
@@ -16,30 +11,50 @@
 }
 #canvas-container {
   height: 750px;
+  justify-content: start;
+  /* float: left; */
+}
+.contain {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px;
+  background-color: #f5f3de;
+  /* background: url(https://cdn.discordapp.com/attachments/648025313833517087/807064675157016576/wp4465114.jpg); */
+  /* background-size: contain;
+  background-repeat: no-repeat; */
 }
 
-
-
-
-
-.buttons {
-  background-color: #3e8ad1; /* Green */
+#all-container{
+  display: flex;
+  justify-content: flex-start;
+  
+}
+#tools-buttons {
+  display: inline-block;
+  justify-content: flex-start;
+  background-color: #3e8ad1; 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 20px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  position: relative;
   font-size: 16px;
+  width: 320px;
+  height: 720px;
 }
+.btn{
+  margin: 5px;
+}
+
+  
 img {
 width: 40px;
   height: 40px;
 }
-
+/* 
 .eraser-setting{
   display: none;
 }
 #filter-sliders{
   display: none;
-}
+} */ 
