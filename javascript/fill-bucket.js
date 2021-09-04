@@ -44,7 +44,7 @@ class fillingBucket extends PaintFunction {
       checkY++
       right = false;
       left = false;
-      while (checkY++ < img.width - 1 && matchStartColor(checkingPx)) {
+      while (checkY++ < img.height && matchStartColor(checkingPx)) {
           checkY++
         colorPx(checkingPx);
         if (checkX > 0) {
@@ -55,7 +55,7 @@ class fillingBucket extends PaintFunction {
             left = false;
           }
         }
-        if (checkX < img.width - 1) {
+        if (checkX < img.width) {
           if (matchStartColor(checkingPx + 4) === true) {
             coordArr.push([checkX + 1, checkY]);
             right = true;
@@ -71,8 +71,17 @@ class fillingBucket extends PaintFunction {
       var r = img.data[pixelPos];
       var g = img.data[pixelPos + 1];
       var b = img.data[pixelPos + 2];
-
-      return r == startR && g == startG && b == startB;
+      var a = img.data[pixelPos + 3];
+      if(matchOutlineColor(r,g,b,a)){
+        return false
+      }
+      if(r == startR && g == startG && b == startB)
+      {
+      return true;
+      }
+      if (r === color[0] && g === color[1] && b === [2]) {
+				return false;
+			}
     }
     function colorPx(pixelPos) {
       img.data[pixelPos] = color[0];
@@ -90,5 +99,9 @@ class fillingBucket extends PaintFunction {
         .match(/.{2}/g)
         .map((x) => parseInt(x, 16));
     }
+     function matchOutlineColor(r, g, b, a) {
+
+			return (r + g + b < 100 && a === 255);
+		}
   }
 }
