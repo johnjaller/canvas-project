@@ -30,11 +30,19 @@ function undo(){
         let undoItem=imgList.pop()
         redoList.push(undoItem)
         clear()
-        let currentCanvas= new Image()
-        currentCanvas.src=imgList[imgList.length-1]
-        currentCanvas.onload=function(){contextReal.drawImage(currentCanvas,0,0)}
+        let newWidth=canvasReal.width*currentScale
+    let newHeight=canvasReal.height*currentScale
+    contextReal.clearRect(0,0,canvasReal.width,canvasReal.height)
+    contextReal.save()
+    contextReal.translate(-((newWidth-canvasReal.width)/2), -((newHeight-canvasReal.height)/2));
+    contextReal.scale(currentScale,currentScale)
+    let currentCanvas= new Image()
+    currentCanvas.src=imgList[imgList.length-1]
+    currentCanvas.onload=function(){contextReal.drawImage(currentCanvas,0,0,newWidth,newHeight)}
+    contextReal.restore()
         undoTrigger=true
-        canva=canvasReal.toDataURL()
+        canva=imgList[imgList.length-1]
+        
     }
     else{
         alert("no more undo")
@@ -47,11 +55,17 @@ function redo(){
         let redoItem=redoList.pop()
         imgList.push(redoItem)
         clear()
+        let newWidth=canvasReal.width*currentScale
+        let newHeight=canvasReal.height*currentScale
+        contextReal.clearRect(0,0,canvasReal.width,canvasReal.height)
+        contextReal.save()
+        contextReal.translate(-((newWidth-canvasReal.width)/2), -((newHeight-canvasReal.height)/2));
+        contextReal.scale(currentScale,currentScale)
         let currentCanvas= new Image()
         currentCanvas.src=imgList[imgList.length-1]
-        currentCanvas.onload=function(){contextReal.drawImage(currentCanvas,0,0)}
-        console.log(imgList)
-        canva=canvasReal.toDataURL()
+        currentCanvas.onload=function(){contextReal.drawImage(currentCanvas,0,0,newWidth,newHeight)}
+        contextReal.restore()
+        canva=imgList[imgList.length-1]
     }else{
         alert("no more redo")
     }

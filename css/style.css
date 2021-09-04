@@ -51,10 +51,15 @@ img {
 width: 40px;
   height: 40px;
 }
-/* 
+ 
 .eraser-setting{
   display: none;
 }
+/*
 #filter-sliders{
   display: none;
 } */ 
+#textInput{
+  width: 300px;
+  height: auto;
+}
