@@ -32,7 +32,7 @@ class sticker extends PaintFunction {
     }
     onMouseMove(coord) {
 
-        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
+        this.contextDraft .clearRect(0,0,canvasDraft.width,canvasDraft.height)
         this.contextDraft.drawImage(this.currentSticker,coord[0]-currentSticker.width*0.4/2,coord[1]-currentSticker.height*0.4/2,currentSticker.width*0.4,currentSticker.height*0.4)
         
     }

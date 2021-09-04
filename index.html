@@ -94,6 +94,7 @@
 
       <span class="btn btn-info" id="filling-bucket">Fill bucket</span>
       <span class="btn btn-info" id="sticker">sticker</span>
+      <span class="btn btn-info" id="import-image">Import image</span>
 
       <!-- The redo button  -->
       <a class="btn btn-light" onclick="exportImage(this)" download="myImage.png" >
@@ -131,12 +132,14 @@
         <input type="range" min="10" value="15" max="50" id="fontSize">
         <label for="font-size" id="font-text"></label>
       </div>
-      <div class="sticker-">
+      <div class="sticker">
        <span id="rickroll"> <img src="./assets/rickroll.jpg" alt=""></span>
        <span id="yodawg"><img src="./assets/yodawg.jpg" alt=""></span>
        <span id="drake"> <img src="./assets/drake.png" alt=""></span>
       </div>
-
+      <div>
+        <input type="file" name="import" id="import" accept="image/*">
+      </div>
    <!-- filter setting -->
   <div class = 'range-container' id = "filter-sliders">
     <div class = 'filter-slider-indiv'>
@@ -172,6 +175,7 @@
 
     <!-- JS Scripts -->
     <script src="./javascript/canvas-common.js" type="text/javascript"></script>
+    <script src="./javascript/image-import.js" type="text/javascript"></script>
     <script src="./javascript/sticker.js" type="text/javascript"></script>
     <script src="./javascript/font-setting.js" type="text/javascript"></script>
     <script src="./javascript/eraser-size.js" type="text/javascript"></script>
@@ -245,9 +249,13 @@
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
-
-
-
+      });
+      $("#import-image").click(() => {
+        currentFunction = new imageImport(contextReal, contextDraft);
+        $(".styling").slideDown();
+        $(".font-setting").slideUp();
+        $(".stroke-style").slideDown();
+        $(".eraser-setting").slideUp();
       });
      
       $("#insert-text").click(() => {
