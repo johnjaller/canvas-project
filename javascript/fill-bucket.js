@@ -44,7 +44,7 @@ class fillingBucket extends PaintFunction {
       checkY++
       right = false;
       left = false;
-      while (checkY++ < canvasReal.width - 1 && matchStartColor(checkingPx)) {
+      while (checkY++ < img.width - 1 && matchStartColor(checkingPx)) {
           checkY++
         colorPx(checkingPx);
         if (checkX > 0) {
@@ -55,7 +55,7 @@ class fillingBucket extends PaintFunction {
             left = false;
           }
         }
-        if (checkX < canvasReal.width - 1) {
+        if (checkX < img.width - 1) {
           if (matchStartColor(checkingPx + 4) === true) {
             coordArr.push([checkX + 1, checkY]);
             right = true;
