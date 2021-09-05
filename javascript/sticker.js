@@ -15,7 +15,7 @@ $("#angry").click(function (e) {
     e.preventDefault();
     currentSticker.src="./assets/Emoji-angry.png"
 });
-currentSticker.src="./assets/rickroll.jpg"
+
 class sticker extends PaintFunction {
     constructor(contextReal,contextDraft) {
         super()

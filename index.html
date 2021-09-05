@@ -52,54 +52,64 @@
           <img class="img-responsive" src="assets/curved-line.png" />
         </button>
 
+      <!-- The fill bucket button  -->
+        <button class="btn btn-light" id="filling-bucket">
+          <img class="img-responsive" src="assets/fill-bucket.png" />
+        </button>
+
       <!-- The drawing circle button  -->
         <button class="btn btn-light" id="drawing-circle">
           <img class="img-responsive" src="assets/circle.png" />
         </button>
         
-      <!-- The drawing elliptical circle button  -->
+      <!-- The drawing elliptical circle button 
         <button class="btn btn-light" id="drawing-ellipse">
           <img class="img-responsive" src="assets/Elliptical-circle.png" />
-        </button>
+        </button> -->
 
       <!-- The drawing rectangle button  -->
       <button class="btn btn-light" id="drawing-rectangle">
         <img class="img-responsive" src="assets/rectangle-frame-pngrepo-com.png"/>
       </button>
 
+
       <!-- The insert text button  -->
-        <button class="btn btn-light" id="insert-text">
-          <img class="img-responsive" src="assets/text-box.png"/>
-        </button>
-
-     <!-- The filter button  -->
-        <button class="btn btn-light" id="filter">
-          <img class="img-responsive" src="assets/filter.png"/>
-        </button>
-      
-      <!-- The eraser button  -->
-        <button class="btn btn-light" id="eraser">
-          <img class="img-responsive" src="assets/eraser.png" />
-        </button>
-
-       <!-- The undo button  -->
-        <button class="btn btn-light" id="undo">
-          <img class="img-responsive" src="assets/undo.png" />
-        </button>
-
-      <!-- The redo button  -->
-      <button class="btn btn-light" id="redo">
-        <img class="img-responsive" src="assets/redo.png" />
+      <button class="btn btn-light" id="insert-text">
+        <img class="img-responsive" src="assets/text-box.png"/>
       </button>
 
-      <!-- The fill bucket button  -->
-      <button class="btn btn-light" id="filling-bucket">
-        <img class="img-responsive" src="assets/fill-bucket.png" />
+       <!-- The eraser button  -->
+       <button class="btn btn-light" id="eraser">
+        <img class="img-responsive" src="assets/eraser.png" />
+      </button>
+
+      <!-- The undo button  -->
+      <button class="btn btn-light" id="undo">
+        <img class="img-responsive" src="assets/undo.png" />
+      </button>
+
+    <!-- The redo button  -->
+    <button class="btn btn-light" id="redo">
+      <img class="img-responsive" src="assets/redo.png" />
+    </button>
+
+      <!-- The zoom in button  -->
+      <button class="btn btn-light" id="zoom-in">
+        <img class="img-responsive" src="assets/zoom-in.png" />
+      </button>
+
+      <!-- The zoom out button  -->
+      <button class="btn btn-light" id="zoom-out">
+        <img class="img-responsive" src="assets/zoom-out.png" />
       </button>
 
       <!-- The sticker button  -->
       <button class="btn btn-light" id="sticker">
         <img class="img-responsive" src="assets/Emoji.png" />
+      </button>
+      <!-- The filter button  -->
+      <button class="btn btn-light" id="filter">
+        <img class="img-responsive" src="assets/filter.png"/>
       </button>
 
       <!-- The import button  -->
@@ -112,15 +122,8 @@
       <a class="btn btn-light" onclick="exportImage(this)" download="myImage.png" >
         <img class="img-responsibe" src="assets/export.png"></a>
 
-      <!-- The zoom in button  -->
-      <button class="btn btn-light" id="zoom-in">
-        <img class="img-responsive" src="assets/zoom-in.png" />
-      </button>
 
-      <!-- The zoom out button  -->
-      <button class="btn btn-light" id="zoom-out">
-        <img class="img-responsive" src="assets/zoom-out.png" />
-      </button>
+     
 
       
     
@@ -270,16 +273,16 @@
         $(".range-container").slideUp();
         $("#import").slideUp();
       });
-      $("#drawing-ellipse").click(() => {
-        currentFunction = new DrawingEllipse(contextReal, contextDraft);
-        $(".styling").slideDown();
-        $(".font-setting").slideUp();
-        $(".stroke-style").slideDown();
-        $(".eraser-setting").slideUp();
-        $(".sticker").slideUp();
-        $(".range-container").slideUp();
-        $("#import").slideUp();
-      });
+      // $("#drawing-ellipse").click(() => {
+      //   currentFunction = new DrawingEllipse(contextReal, contextDraft);
+      //   $(".styling").slideDown();
+      //   $(".font-setting").slideUp();
+      //   $(".stroke-style").slideDown();
+      //   $(".eraser-setting").slideUp();
+      //   $(".sticker").slideUp();
+      //   $(".range-container").slideUp();
+      //   $("#import").slideUp();
+      // });
       $("#import-image").click(() => {
         currentFunction = new imageImport(contextReal, contextDraft);
         $(".styling").slideDown();
