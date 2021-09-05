@@ -1,4 +1,4 @@
-function exportImage(element)
+function exportImage()
 {
     
     element.href=canvasToImage("#ffffff")
