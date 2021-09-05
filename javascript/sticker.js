@@ -15,6 +15,18 @@ $("#angry").click(function (e) {
     e.preventDefault();
     currentSticker.src="./assets/Emoji-angry.png"
 });
+$("#rickroll").click(function (e) { 
+    e.preventDefault();
+    currentSticker.src="./assets/rickroll.jpg"
+});
+$("#yodawg").click(function (e) { 
+    e.preventDefault();
+    currentSticker.src="./assets/yodawg.jpg"
+});
+$("#drake").click(function (e) { 
+    e.preventDefault();
+    currentSticker.src="./assets/drake.png"
+});
 
 class sticker extends PaintFunction {
     constructor(contextReal,contextDraft) {
