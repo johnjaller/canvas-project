@@ -97,11 +97,18 @@
         <img class="img-responsive" src="assets/fill-bucket.png" />
       </button>
 
-      <span class="btn btn-info" id="filling-bucket">Fill bucket</span>
-      <span class="btn btn-info" id="sticker">sticker</span>
-      <span class="btn btn-info" id="import-image">Import image</span>
-s
-      <!-- The redo button  -->
+      <!-- The sticker button  -->
+      <button class="btn btn-light" id="sticker">
+        <img class="img-responsive" src="assets/Emoji.png" />
+      </button>
+
+      <!-- The import button  -->
+      <button class="btn btn-light" id="import-image">
+        <img class="img-responsive" src="assets/import.png" />
+      </button>
+      
+
+      <!-- The export button  -->
       <a class="btn btn-light" onclick="exportImage(this)" download="myImage.png" >
         <img class="img-responsibe" src="assets/export.png"></a>
 
@@ -129,9 +136,9 @@ s
       </div>
       <!-- eraser setting -->
       <div class="eraser-setting">
-      <span class="btn btn-warning" id="eraser-circle">Circle Eraser</span>
-      <input type="range" min="10" max="100" step="10" name="eraser-size" id="eraserSize" />
-      <p class="eraserSize-text"></p>
+        <span class="btn btn-warning" id="eraser-circle">Circle Eraser</span>
+        <input type="range" min="10" max="100" step="10" name="eraser-size" id="eraserSize" />
+        <p class="eraserSize-text"></p>
       </div>
       <div class="font-setting">
         <label for="font">Choose a font:</label>
@@ -145,9 +152,10 @@ s
         <label for="font-size" id="font-text"></label>
       </div>
       <div class="sticker">
-       <span id="rickroll"> <img src="./assets/rickroll.jpg" alt=""></span>
-       <span id="yodawg"><img src="./assets/yodawg.jpg" alt=""></span>
-       <span id="drake"> <img src="./assets/drake.png" alt=""></span>
+       <span id="smile"> <img src="./assets/Emoji-Smiley.png" alt=""></span>
+       <span id="poop"><img src="./assets/Poop_Emoji.png" alt=""></span>
+       <span id="what"> <img src="./assets/Emoji-what.png" alt=""></span>
+       <span id="angry"> <img src="./assets/Emoji-angry.png" alt=""></span>
       </div>
       <div>
         <input type="file" name="import" id="import" accept="image/*">
@@ -215,6 +223,9 @@ s
       $(() => { currentFunction = new DrawingLine(contextReal);
         $(".font-setting").slideUp();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
 
       $("#drawing-line").click(() => {
@@ -223,9 +234,9 @@ s
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
-
-
-
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
       $("#drawing-straightline").click(() => {
         currentFunction = new DrawingStraightLine(contextReal, contextDraft);
@@ -233,8 +244,9 @@ s
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
-
-
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
 
       $("#drawing-rectangle").click(() => {
@@ -243,6 +255,9 @@ s
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
      
       $("#drawing-circle").click(() => {
@@ -251,6 +266,9 @@ s
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
       $("#drawing-ellipse").click(() => {
         currentFunction = new DrawingEllipse(contextReal, contextDraft);
@@ -258,6 +276,9 @@ s
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
       $("#import-image").click(() => {
         currentFunction = new imageImport(contextReal, contextDraft);
@@ -265,6 +286,9 @@ s
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
      
       $("#insert-text").click(() => {
@@ -273,13 +297,19 @@ s
         $(".styling").slideDown();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       })
       $("#sticker").click(() => {
         currentFunction = new sticker(contextReal,contextDraft)
         $(".font-setting").slideUp();
         $(".styling").slideUp();
-        $(".stroke-style").slideDown();
+        $(".stroke-style").slideUp();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideDown()
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       })
 
       $("#drawing-curvedline").click(() => {
@@ -288,11 +318,15 @@ s
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
       $("#filter").click(() => {
         $(".styling").slideUp();
         $(".font-setting").slideUp();
         $(".eraser-setting").slideUp();
+        $(".range-container").slideDown();
+        $("#import").slideUp();
       });
       $("#filling-bucket").click(() => {
         currentFunction = new fillingBucket(contextReal)
@@ -300,6 +334,9 @@ s
         $(".font-setting").slideUp();
         $(".stroke-style").slideUp();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
 
       $("#eraser").click(() => {
@@ -307,11 +344,18 @@ s
         $(".styling").slideUp();
         $(".font-setting").slideUp();
         $(".eraser-setting").slideDown();
-
-
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
+
+      $("#import-image").click(() => {
+        currentFunction = new imageImport (contextReal, contextDraft);
+        $("#import").slideDown();
+      });
+
       $("#eraser-circle").click(() => {
         currentFunction = new eraserCircle(contextReal, contextDraft);
+    
       });
       $("#undo").click(() => {
         undo()

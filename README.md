@@ -18,9 +18,12 @@
 | Eraser width           | Adjustable eraser size               
 | Undo                   | Cancel the last action                  
 | Redo                   | Reverse the undo                 
+| Fill Bucket            | Change colour of existing objects on the canvas
+| Sticker                | A choice of 4 emojis
 | Zoom in                | Zoom in makes canvas objects bigger           
 | Zoom out               | Zoom out makes canvas objects smaller               
-| Export Canvas          | Download canvas as JPEG image             
+| Export Canvas          | Download canvas as JPEG image    
+| Import Image           | Upload image to the canvas         
 | Fill color             | Changes the color of the filling of objects                
 | Stroke color           | Changes the color of outline of objects                 
 
