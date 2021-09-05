@@ -57,10 +57,6 @@
           <img class="img-responsive" src="assets/circle.png" />
         </button>
         
-      <!-- The drawing elliptical circle button  -->
-        <button class="btn btn-light" id="drawing-ellipse">
-          <img class="img-responsive" src="assets/Elliptical-circle.png" />
-        </button>
 
       <!-- The drawing rectangle button  -->
       <button class="btn btn-light" id="drawing-rectangle">
@@ -112,7 +108,7 @@
         <label for="stroke">Stroke color</label>
         <input type="color" id="stroke" value="#000000" />
         <label for="width">width</label>
-        <input type="range" min="1" max="10" step="1" name="width" id="width" />
+        <input type="range" min="1" max="20" value="10" step="1" name="width" id="width" />
         <p class="width-text"></p>
       </div>
       <!-- eraser setting -->
@@ -137,7 +133,7 @@
        <span id="yodawg"><img src="./assets/yodawg.jpg" alt=""></span>
        <span id="drake"> <img src="./assets/drake.png" alt=""></span>
       </div>
-      <div>
+      <div class="import-image">
         <input type="file" name="import" id="import" accept="image/*">
       </div>
    <!-- filter setting -->
@@ -197,7 +193,6 @@
     <script src="./javascript/zoomIn-zoomOut.js" type="text/javascript"></script>
     <script src="./javascript/undo-redo.js" type="text/javascript"></script>
 
-    <script src="./javascript/ellipse.js"type="text/javascript"></script>
     <script type="text/javascript">
       $(() => { currentFunction = new DrawingLine(contextReal);
         $(".font-setting").slideUp();
@@ -243,19 +238,15 @@
         $(".eraser-setting").slideUp();
 
       });
-      $("#drawing-ellipse").click(() => {
-        currentFunction = new DrawingEllipse(contextReal, contextDraft);
-        $(".styling").slideDown();
-        $(".font-setting").slideUp();
-        $(".stroke-style").slideDown();
-        $(".eraser-setting").slideUp();
-      });
+     
       $("#import-image").click(() => {
         currentFunction = new imageImport(contextReal, contextDraft);
-        $(".styling").slideDown();
+        $(".import-image").slideDown();
+        $(".styling").slideUp();
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
       });
      
       $("#insert-text").click(() => {
@@ -264,12 +255,14 @@
         $(".styling").slideDown();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
       })
       $("#sticker").click(() => {
         currentFunction = new sticker(contextReal,contextDraft)
         $(".font-setting").slideUp();
         $(".styling").slideUp();
-        $(".stroke-style").slideDown();
+        $(".sticker").slideDown();
+        $(".stroke-style").slideUp();
         $(".eraser-setting").slideUp();
       })
 
@@ -279,6 +272,7 @@
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
 
       });
       $("#filter").click(() => {
@@ -292,6 +286,7 @@
         $(".font-setting").slideUp();
         $(".stroke-style").slideUp();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
 
       });
 
@@ -300,6 +295,7 @@
 
         $(".styling").slideUp();
         $(".font-setting").slideUp();
+        $(".sticker").slideUp();
         $(".eraser-setting").slideDown();
 
 
