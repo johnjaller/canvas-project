@@ -52,6 +52,11 @@
           <img class="img-responsive" src="assets/curved-line.png" />
         </button>
 
+      <!-- The fill bucket button  -->
+        <button class="btn btn-light" id="filling-bucket">
+          <img class="img-responsive" src="assets/fill-bucket.png" />
+        </button>
+
       <!-- The drawing circle button  -->
         <button class="btn btn-light" id="drawing-circle">
           <img class="img-responsive" src="assets/circle.png" />
@@ -63,42 +68,59 @@
         <img class="img-responsive" src="assets/rectangle-frame-pngrepo-com.png"/>
       </button>
 
+
       <!-- The insert text button  -->
-        <button class="btn btn-light" id="insert-text">
-          <img class="img-responsive" src="assets/text-box.png"/>
-        </button>
-
-     <!-- The filter button  -->
-        <button class="btn btn-light" id="filter">
-          <img class="img-responsive" src="assets/filter.png"/>
-        </button>
-      
-      <!-- The eraser button  -->
-        <button class="btn btn-light" id="eraser">
-          <img class="img-responsive" src="assets/eraser.png" />
-        </button>
-
-       <!-- The undo button  -->
-        <button class="btn btn-light" id="undo">
-          <img class="img-responsive" src="assets/undo.png" />
-        </button>
-
-      <!-- The redo button  -->
-      <button class="btn btn-light" id="redo">
-        <img class="img-responsive" src="assets/redo.png" />
+      <button class="btn btn-light" id="insert-text">
+        <img class="img-responsive" src="assets/text-box.png"/>
       </button>
 
-      <span class="btn btn-info" id="filling-bucket">Fill bucket</span>
-      <span class="btn btn-info" id="sticker">sticker</span>
-      <span class="btn btn-info" id="import-image">Import image</span>
+       <!-- The eraser button  -->
+       <button class="btn btn-light" id="eraser">
+        <img class="img-responsive" src="assets/eraser.png" />
+      </button>
 
-      <!-- The redo button  -->
+      <!-- The undo button  -->
+      <button class="btn btn-light" id="undo">
+        <img class="img-responsive" src="assets/undo.png" />
+      </button>
+
+    <!-- The redo button  -->
+    <button class="btn btn-light" id="redo">
+      <img class="img-responsive" src="assets/redo.png" />
+    </button>
+
+      <!-- The zoom in button  -->
+      <button class="btn btn-light" id="zoom-in">
+        <img class="img-responsive" src="assets/zoom-in.png" />
+      </button>
+
+      <!-- The zoom out button  -->
+      <button class="btn btn-light" id="zoom-out">
+        <img class="img-responsive" src="assets/zoom-out.png" />
+      </button>
+
+      <!-- The sticker button  -->
+      <button class="btn btn-light" id="sticker">
+        <img class="img-responsive" src="assets/Emoji.png" />
+      </button>
+      <!-- The filter button  -->
+      <button class="btn btn-light" id="filter">
+        <img class="img-responsive" src="assets/filter.png"/>
+      </button>
+
+      <!-- The import button  -->
+      <button class="btn btn-light" id="import-image">
+        <img class="img-responsive" src="assets/import.png" />
+      </button>
+      
+
+      <!-- The export button  -->
       <a class="btn btn-light" onclick="exportImage(this)" download="myImage.png" >
         <img class="img-responsibe" src="assets/export.png"></a>
 
 
-        <button class="btn btn-light" id="zoom-in">zoom in</button>
-        <button class="btn btn-light" id="zoom-out">zoom out</button>
+     
+
       
     
       <!-- Styling setting -->
@@ -113,9 +135,9 @@
       </div>
       <!-- eraser setting -->
       <div class="eraser-setting">
-      <span class="btn btn-warning" id="eraser-circle">Circle Eraser</span>
-      <input type="range" min="10" max="100" step="10" name="eraser-size" id="eraserSize" />
-      <p class="eraserSize-text"></p>
+        <span class="btn btn-warning" id="eraser-circle">Circle Eraser</span>
+        <input type="range" min="10" max="100" step="10" name="eraser-size" id="eraserSize" />
+        <p class="eraserSize-text"></p>
       </div>
       <div class="font-setting">
         <label for="font">Choose a font:</label>
@@ -129,9 +151,10 @@
         <label for="font-size" id="font-text"></label>
       </div>
       <div class="sticker">
-       <span id="rickroll"> <img src="./assets/rickroll.jpg" alt=""></span>
-       <span id="yodawg"><img src="./assets/yodawg.jpg" alt=""></span>
-       <span id="drake"> <img src="./assets/drake.png" alt=""></span>
+       <span id="smile"> <img src="./assets/Emoji-Smiley.png" alt=""></span>
+       <span id="poop"><img src="./assets/Poop_Emoji.png" alt=""></span>
+       <span id="what"> <img src="./assets/Emoji-what.png" alt=""></span>
+       <span id="angry"> <img src="./assets/Emoji-angry.png" alt=""></span>
       </div>
       <div class="import-image">
         <input type="file" name="import" id="import" accept="image/*">
@@ -144,8 +167,9 @@
                 <label>Blur</label>
                 <input id = "blur-range" type="range" class="filter-control-range" min = 0 max = 10 value = 0 step = 1
                 style="width:85px">
-    
-                    <label>Brightness</label>
+            </form>
+            <form>
+                <label>Brightness</label>
                 <input id = "brightness-range" type="range" class="filter-control-range filter-right" min = 0 max = 200 value = 100 step = 1
                  style="width:85px">
             </div>
@@ -197,6 +221,9 @@
       $(() => { currentFunction = new DrawingLine(contextReal);
         $(".font-setting").slideUp();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
 
       $("#drawing-line").click(() => {
@@ -205,9 +232,9 @@
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
-
-
-
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
       $("#drawing-straightline").click(() => {
         currentFunction = new DrawingStraightLine(contextReal, contextDraft);
@@ -215,8 +242,9 @@
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
-
-
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
 
       $("#drawing-rectangle").click(() => {
@@ -225,9 +253,9 @@
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
-
-
-
+        $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
      
       $("#drawing-circle").click(() => {
@@ -236,6 +264,8 @@
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
 
       });
      
@@ -247,6 +277,8 @@
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
         $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
      
       $("#insert-text").click(() => {
@@ -256,14 +288,18 @@
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
         $(".sticker").slideUp();
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       })
       $("#sticker").click(() => {
         currentFunction = new sticker(contextReal,contextDraft)
         $(".font-setting").slideUp();
         $(".styling").slideUp();
-        $(".sticker").slideDown();
         $(".stroke-style").slideUp();
         $(".eraser-setting").slideUp();
+        $(".sticker").slideDown()
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       })
 
       $("#drawing-curvedline").click(() => {
@@ -272,13 +308,15 @@
         $(".font-setting").slideUp();
         $(".stroke-style").slideDown();
         $(".eraser-setting").slideUp();
-        $(".sticker").slideUp();
-
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
       $("#filter").click(() => {
         $(".styling").slideUp();
         $(".font-setting").slideUp();
         $(".eraser-setting").slideUp();
+        $(".range-container").slideDown();
+        $("#import").slideUp();
       });
       $("#filling-bucket").click(() => {
         currentFunction = new fillingBucket(contextReal)
@@ -287,22 +325,28 @@
         $(".stroke-style").slideUp();
         $(".eraser-setting").slideUp();
         $(".sticker").slideUp();
-
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
 
       $("#eraser").click(() => {
         currentFunction = new eraser(contextReal, contextDraft);
-
         $(".styling").slideUp();
         $(".font-setting").slideUp();
         $(".sticker").slideUp();
         $(".eraser-setting").slideDown();
-
-
+        $(".range-container").slideUp();
+        $("#import").slideUp();
       });
+
+      $("#import-image").click(() => {
+        currentFunction = new imageImport (contextReal, contextDraft);
+        $("#import").slideDown();
+      });
+
       $("#eraser-circle").click(() => {
         currentFunction = new eraserCircle(contextReal, contextDraft);
-
+    
       });
       $("#undo").click(() => {
         undo()

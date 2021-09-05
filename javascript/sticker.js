@@ -1,17 +1,21 @@
 let currentSticker=new Image()
-$("#rickroll").click(function (e) { 
+$("#smile").click(function (e) { 
     e.preventDefault();
-    currentSticker.src="./assets/rickroll.jpg"
+    currentSticker.src="./assets/Emoji-Smiley.png"
 });
-$("#yodawg").click(function (e) { 
+$("#poop").click(function (e) { 
     e.preventDefault();
-    currentSticker.src="./assets/yodawg.jpg"
+    currentSticker.src="./assets/Poop_Emoji.png"
 });
-$("#drake").click(function (e) { 
+$("#what").click(function (e) { 
     e.preventDefault();
-    currentSticker.src="./assets/drake.png"
+    currentSticker.src="./assets/Emoji-what.png"
 });
-currentSticker.src="./assets/rickroll.jpg"
+$("#angry").click(function (e) { 
+    e.preventDefault();
+    currentSticker.src="./assets/Emoji-angry.png"
+});
+
 class sticker extends PaintFunction {
     constructor(contextReal,contextDraft) {
         super()
