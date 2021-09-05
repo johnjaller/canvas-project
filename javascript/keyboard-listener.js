@@ -15,3 +15,7 @@ $(document).keydown(function (e) {
     
   }
 )
+
+$(document).keyup(function () { 
+  currentKey=""
+});

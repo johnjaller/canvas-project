@@ -20,16 +20,21 @@ class imageImport extends PaintFunction {
         this.importImage=importImage
     }
     onMouseDown(coord) {
-        if(importImage.src!="")
+        this.origX=coord[0]
+        this.origY=coord[1]
+       
+    }
+    onDragging(coord) {
+        if(currentKey==="Shift")
         {
-        this.contextReal.drawImage(importImage,coord[0]-importImage.width*0.5,coord[1]-importImage.height*0.5,importImage.width*0.5,importImage.height*0.5)
-    }else{
-        return ;
+           
+        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
+        this.contextDraft.drawImage(importImage,coord[0]-importImage.width*0.5,coord[1]-importImage.height*0.5,importImage.width*0.5+coord[0]-this.origX,importImage.height*0.5+coord[1]-this.origY)
+        }
     }
-    }
-    onDragging() {}
     onMouseMove(coord) {
-        if(importImage.src!="")
+        console.log(currentKey)
+        if(importImage.src!=""&&currentKey!="Shift")
         {
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
         this.contextDraft.drawImage(importImage,coord[0]-importImage.width*0.5,coord[1]-importImage.height*0.5,importImage.width*0.5,importImage.height*0.5)
@@ -39,15 +44,30 @@ class imageImport extends PaintFunction {
         }
     }
     onMouseUp(coord) {
-        if(importImage.src!="")
+        if(importImage.src!=""&&currentKey==="Shift")
         {
-        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
+            this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
+            this.contextReal.drawImage(importImage,coord[0]-importImage.width*0.5,coord[1]-importImage.height*0.5,importImage.width*0.5+coord[0]-this.origX,importImage.height*0.5+coord[1]-this.origY) 
         history()
         importImage=new Image()
-        }else{
-            return;
+        }
+        
+        if(importImage.src!=""&&currentKey==="Control")
+        {
+        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
+        this.contextReal.drawImage(importImage,coord[0]-importImage.width*0.5,coord[1]-importImage.height*0.5,importImage.width*0.5,importImage.height*0.5)
+        history()
+        }
+        if(importImage.src!=""&&currentKey!="Shift"&&currentKey!="Control")
+        {
+        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
+        this.contextReal.drawImage(importImage,coord[0]-importImage.width*0.5,coord[1]-importImage.height*0.5,importImage.width*0.5,importImage.height*0.5)
+        history()
+        importImage=new Image()
         }
     }
-    onMouseLeave() {}
+    onMouseLeave() {
+        this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height)
+    }
     onMouseEnter() {}
   }
