@@ -92,15 +92,25 @@
         <img class="img-responsive" src="assets/redo.png" />
       </button>
 
-      <span class="btn btn-info" id="filling-bucket">Fill bucket</span>
+      <!-- The fill bucket button  -->
+      <button class="btn btn-light" id="filling-bucket">
+        <img class="img-responsive" src="assets/fill-bucket.png" />
+      </button>
 
       <!-- The redo button  -->
       <a class="btn btn-light" onclick="exportImage(this)" download="myImage.png" >
         <img class="img-responsibe" src="assets/export.png"></a>
 
+      <!-- The zoom in button  -->
+      <button class="btn btn-light" id="zoom-in">
+        <img class="img-responsive" src="assets/zoom-in.png" />
+      </button>
 
-        <button class="btn btn-light" id="zoom-in">zoom in</button>
-        <button class="btn btn-light" id="zoom-out">zoom out</button>
+      <!-- The zoom out button  -->
+      <button class="btn btn-light" id="zoom-out">
+        <img class="img-responsive" src="assets/zoom-out.png" />
+      </button>
+
       
     
       <!-- Styling setting -->
@@ -139,8 +149,9 @@
                 <label>Blur</label>
                 <input id = "blur-range" type="range" class="filter-control-range" min = 0 max = 10 value = 0 step = 1
                 style="width:85px">
-    
-                    <label>Brightness</label>
+            </form>
+            <form>
+                <label>Brightness</label>
                 <input id = "brightness-range" type="range" class="filter-control-range filter-right" min = 0 max = 200 value = 100 step = 1
                  style="width:85px">
             </div>
