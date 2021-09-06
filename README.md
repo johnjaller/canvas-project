@@ -22,7 +22,7 @@
 | Sticker                | A choice of 4 emojis
 | Zoom in                | Zoom in makes canvas objects bigger           
 | Zoom out               | Zoom out makes canvas objects smaller               
-| Export Canvas          | Download canvas as JPEG image    
+| Export Canvas          | Download canvas as PNG image    
 | Import Image           | Upload image to the canvas         
 | Fill color             | Changes the color of the filling of objects                
 | Stroke color           | Changes the color of outline of objects                 
