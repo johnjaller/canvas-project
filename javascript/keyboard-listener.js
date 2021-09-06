@@ -8,6 +8,14 @@ $(document).keydown(function (e) {
     {
         redo()
     }
+    else if(e.key==="-")
+    {
+      zoomOut()
+    }
+    else if(e.key==="=")
+    {
+      zoomIn()
+    }
     else{
         currentKey=e.key
         console.log(currentKey)
